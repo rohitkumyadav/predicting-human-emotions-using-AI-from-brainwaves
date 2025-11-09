@@ -9,27 +9,26 @@ This project aims to design an intelligent system that predicts emotional states
 ## Project Organization
 
 ```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
+├── LICENSE            <- Open-source license
+├── README.md          <- Read about the project
 ├── data
-│   ├── external       <- Data from third party sources.
 │   ├── interim        <- Intermediate data that has been transformed.
 │   ├── processed      <- The final, canonical data sets for modeling.
+|   |   |── train
+|   |   |   |──train_dataset.csv <- training data
+|   |   |── test
+|   |   |   |──real_world_test.csv <- data to test 
+|   |   |── eeg_emotion_dataset.csv  <- main csv file without train-test
 │   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
 │
 ├── models             <- Trained and serialized models, model predictions, or model summaries
 │
 ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
 │                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
+│                         `eeg_final.ipynb`.
 │
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         predicting human emotions using AI from brainwaves and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
+├── references         <- dataset link
+|   |──data_source.txt
 │
 ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
 │   └── figures        <- Generated graphics and figures to be used in reporting
@@ -39,22 +38,13 @@ This project aims to design an intelligent system that predicts emotional states
 │
 ├── setup.cfg          <- Configuration file for flake8
 │
-└── predicting human emotions using AI from brainwaves   <- Source code for use in this project.
+└── Deployment   <- Source code for use in this project.
     │
     ├── __init__.py             <- Makes predicting human emotions using AI from brainwaves a Python module
     │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
+    ├── app.py             <- Code to create features for modeling
     │
     ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
 ```
 
 --------

@@ -1,12 +1,10 @@
-ipython
-jupyterlab
-matplotlib
-mkdocs
-notebook
-numpy
+streamlit
 pandas
-pip
-python-dotenv
-ruff
+numpy
+scipy
+joblib
+xgboost
+matplotlib
+seaborn
 scikit-learn
--e .
+openpyxl
