@@ -166,7 +166,7 @@ Run the web app:
 
 ```bash
 cd Deployment
-python app.py
+streamlit run app.py
 ```
 
 Or explore the model via Jupyter Notebook:
