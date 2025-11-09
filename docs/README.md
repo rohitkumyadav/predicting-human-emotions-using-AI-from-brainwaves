@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/scikit--learn-1.x-orange?logo=scikitlearn" />
   <img src="https://img.shields.io/badge/License-MIT-green?logo=open-source-initiative" />
   <img src="https://img.shields.io/badge/Model-XGBoost-blue?logo=xgboost" />
-  <img src="https://img.shields.io/badge/Framework-Flask-lightgrey?logo=flask" />
+  <img src="https://img.shields.io/badge/Framework-Streamlit-red?logo=streamlit" />  
   <img src="https://img.shields.io/badge/Notebook-Jupyter-orange?logo=jupyter" />
 </p>
 
