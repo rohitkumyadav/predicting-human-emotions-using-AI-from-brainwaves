@@ -12,11 +12,18 @@
 ---
 
 ## Overview
+This project develops an **AI-powered system** that predicts **human emotions** — such as **happiness**, **sadness**, and **fear** — from **EEG brainwave signals** using advanced **machine learning algorithms**.  
+By analyzing neural activity patterns, the system classifies emotions in **real time**, helping **healthcare professionals** understand the emotional states of patients — especially those **unable to communicate** — thus enhancing **emotional awareness** and **patient-centered care**.
 
-This project aims to design an **AI-powered system** that predicts emotional states—such as **happiness**, **sadness**, and **fear**—from **EEG brainwave signals**.  
-By analyzing neural activity patterns and applying advanced **machine learning algorithms**, the system can accurately classify emotions in real time.
+Multiple models were trained and compared:
 
-The goal is to assist **healthcare professionals** in understanding patients’ emotional conditions, especially those unable to communicate, thus enhancing **emotional awareness** and **patient-centered care**.
+- **Random Forest:** 72.5%  
+- **AdaBoost:** 43.2%  
+- **LightGBM:** 94.4%  
+- **XGBoost (Final Model):** **96.3%**
+
+The **XGBoost model** achieved the **highest accuracy of 96.3%**, with balanced performance across all emotion classes:  
+**Precision = 0.96 | Recall = 0.96 | F1-Score = 0.96 | Accuracy = 96.3%**
 
 ---
 
