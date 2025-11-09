@@ -1,10 +1,6 @@
 # Predicting Human Emotions Using AI from Brainwaves
 
 <p align="center">
-  <img src="readmeai/assets/logos/purple.svg" width="30%" alt="Project Logo"/>
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/Python-3.9%2B-blue?logo=python" />
   <img src="https://img.shields.io/badge/scikit--learn-1.x-orange?logo=scikitlearn" />
   <img src="https://img.shields.io/badge/License-MIT-green?logo=open-source-initiative" />
@@ -15,7 +11,7 @@
 
 ---
 
-## 🧠 Overview
+## Overview
 
 This project aims to design an **AI-powered system** that predicts emotional states—such as **happiness**, **sadness**, and **fear**—from **EEG brainwave signals**.  
 By analyzing neural activity patterns and applying advanced **machine learning algorithms**, the system can accurately classify emotions in real time.
@@ -24,7 +20,7 @@ The goal is to assist **healthcare professionals** in understanding patients’ 
 
 ---
 
-## 🚀 Features
+## Features
 
 - Real-time EEG signal processing and classification  
 - Machine learning model based on XGBoost  
@@ -34,7 +30,7 @@ The goal is to assist **healthcare professionals** in understanding patients’ 
 
 ---
 
-## 🧩 Project Structure
+## Project Structure
 
 ```bash
 predicting-human-emotions-using-AI-from-brainwaves/
@@ -70,7 +66,7 @@ predicting-human-emotions-using-AI-from-brainwaves/
 
 ---
 
-## ⚙️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -111,7 +107,7 @@ jupyter notebook notebooks/eeg_final.ipynb
 
 ---
 
-## 🧪 Model Details
+## Model Details
 
 - **Algorithm:** XGBoost Classifier  
 - **Input:** EEG brainwave features (alpha, beta, theta, gamma bands)  
@@ -131,7 +127,7 @@ jupyter notebook notebooks/eeg_final.ipynb
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions!
 
@@ -145,14 +141,14 @@ For detailed contribution steps, refer to `CONTRIBUTING.md`.
 
 ---
 
-## 📜 License
+## License
 
 Distributed under the [MIT License](LICENSE).  
 Feel free to use and modify this project with attribution.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - EEG Emotion Recognition dataset contributors  
 - XGBoost and Scikit-learn open-source communities  
