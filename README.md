@@ -27,6 +27,69 @@ The **XGBoost model** achieved the **highest accuracy of 96.3%**, with balanced 
 
 ---
 
+## Dataset  
+
+The dataset used in this project is sourced from a public EEG dataset containing recordings from **10 healthy participants**, designed specifically to analyze brain activity associated with **visually induced emotions**.
+
+- **Emotions:** Happy 😊, Sad 😢, Fear 😨  
+- **Channels:** 32-channel Emotiv Epoc Flex system (10-20 international standard)  
+- **Sampling Rate:** 128 Hz  
+- **Data Source:** [`EEG Emotion Recognition Dataset (GU)`](https://figshare.com/articles/dataset/EEG_Emotion_Recognition_Dataset_GU/29170289?file=54897092)  
+- **Folder Used:** `Clean_Cliped/` (preprocessed EEG signals)  
+
+The `Clean_Cliped` data was preprocessed by the original authors using a robust pipeline that included:  
+- **Bandpass Filtering** – to isolate relevant EEG frequency bands  
+- **Savitzky-Golay Smoothing** – to reduce high-frequency noise  
+- **Independent Component Analysis (ICA)** – to remove eye-blink and motion artifacts  
+
+---
+
+## Methodology  
+
+This project follows a structured machine learning pipeline to process and model EEG data for emotion recognition.
+
+#### 1. Data Consolidation  
+The raw dataset consisted of hundreds of individual `.mat` files (one per subject, emotion, and trial).  
+A Python script (`eeg_final.ipynb`) was created to:
+1. **Parse Filenames:** Extract `subject_id` and `emotion` labels directly from filenames.  
+2. **Load Data:** Read EEG signals from each `.mat` file into NumPy arrays.  
+3. **Combine Data:** Merge all records into a unified CSV file (`eeg_emotion_dataset.csv`) containing all samples with corresponding labels.
+
+---
+
+## Data Preparation for Machine Learning  
+Before feeding the data to models, it underwent multiple preparation steps to ensure robustness:
+
+- **Subject-Aware Splitting:**  
+  Used `GroupShuffleSplit` to split data by `subject_id` to prevent data leakage — ensuring that EEG data from the same subject never appears in both training and testing sets.  
+
+- **Windowing (Epoching):**  
+  Continuous EEG signals were segmented into **2-second windows** (256 timesteps) with **50% overlap**, converting the time series into meaningful data samples.  
+
+- **Data Division Strategy:**  
+  - **95%** of the dataset was used for **model training and validation** (internally split into train/test).  
+  - **5%** was held out as **real-world unseen data** for final model evaluation and deployment testing.  
+
+---
+
+## Model Architecture  
+
+Rather than deep neural networks, this project employs a suite of powerful **tree-based ensemble machine learning models**.  
+Each model was trained on extracted statistical and frequency-domain EEG features to classify the emotional state.
+
+**Models Implemented:**
+- **Random Forest:** Builds multiple decision trees and averages their predictions, reducing overfitting and improving robustness.  
+- **AdaBoost:** Sequentially combines weak learners, giving more weight to previously misclassified samples.  
+- **XGBoost (Extreme Gradient Boosting):** Highly optimized gradient boosting algorithm offering parallelization and regularization.  
+- **LightGBM:** Efficient gradient boosting framework that grows trees leaf-wise, significantly speeding up training on large datasets.  
+
+All models were trained and evaluated under the same preprocessing and feature extraction conditions to ensure fair comparison.  
+The best-performing model was selected based on accuracy, precision, recall, and F1-score metrics.
+
+---
+
+*In summary, this dataset and preprocessing strategy allow reliable emotion classification from EEG brainwave signals, while maintaining subject independence and real-world generalization.*
+
 ## Features
 
 - Real-time EEG signal processing and classification  
